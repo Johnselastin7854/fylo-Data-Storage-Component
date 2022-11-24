@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+:root{
+
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}    
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%; /*1rem = 10px*/
+}
+body{
+
+    background-color: var(--very-dark-blue);
+    background-image: url("../images/bg-mobile.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    margin:1.5rem;
+} 
+img{
+    max-width: 100%;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* card--1 */
+.card--1{
+    background-color:var(--dark-blue) ;
+    padding: 3rem 9rem 3rem 3rem;
+    border-radius: 1rem 9rem 1rem 1rem;
+}
+.card-icons{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.icons{
+    background-color: var(--very-dark-blue);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+
+/* card--2 */
+.card--2{
+    background-color:var(--dark-blue) ;
+    border-radius: 1rem;
+    position: relative;
+    padding-block: 3rem;
+    padding-inline: 3rem;
+}
+.desc{
+    color:var(--grayish-blue);
+    padding:0 15px;
+    font-size: 1.5rem;
+}
+strong{
+    color: var(--pale-blue);
+}
+.progressbar-outer{
+    width: 300px;
+    height: 18px;
+    background-color: var(--very-dark-blue);
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+.progressbar-inner{
+    height: 100%;
+    width: 250px;
+    background-color: red;
+    border: 1px solid;
+    border-radius: 1rem;
+}
+.ball{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background-color:var(--pale-blue);
+    position: relative;
+    top:1px;
+    left: 232px;
+}
+.progressbar-deatil{
+    display:flex;
+    justify-content:space-between;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--pale-blue);
+    font-weight: bold;
+}
+.status-bar{
+    height: 50px;
+    width: 150px;
+    background-color: var(--pale-blue);
+    border-radius: 1rem;
+    padding-block: 3rem;
+    padding-inline-start: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    position: absolute;
+    left: 100px;
+    /* top:100px; */
+}
+.status-bar h1{
+    font-size:3rem;
+    font-weight: bold;
+    color: var(--very-dark-blue);
+    letter-spacing: 1px;
+}
+.status-bar span{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: var(--grayish-blue);
+    font-weight: bold;
+}
+
+/* Media Query */
+
+@media (min-width:56.5em){
+    body{
+        background-image: url(../images/bg-desktop.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment: fixed;
+        background-color: var(--very-dark-blue);
+    }
+    .card{
+        flex-direction: row;
+}
+.logo{
+    max-width: 10rem;
+    max-height:10rem;
+}
+.card--2{
+    max-width: 1000px;
+    height:120px;
+    transform: translateY(2.7rem);
+    padding-inline-end: 8rem;
+
+}
+.progressbar-outer{
+    width: 450px;
+}
+.progressbar-inner{
+    width: 350px;
+}
+.ball{
+    left: 332px;
+}
+.status-bar{
+    position: relative;
+    transform: translate(190px,-151px);
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 75%, 100% 100%, 90% 83%, 0 81%); */
+}
+.status-bar::before{
+    content:"";
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    transform: skewX(-50deg);
+    rotate: 70deg;
+
+    background-color: var(--pale-blue);
+}
+}
